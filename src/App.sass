@@ -1,0 +1,153 @@
+.App
+  text-align: center
+  font: 16px 'Arial', sans-serif
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap;
+
+.personalKeywords
+  color: purple
+.techKeywords
+  color: green
+.professionalKeywords
+  color: blue
+.softKeywords
+  color: pink
+.yellowFishKeywords
+  color: yellow
+
+.titleSection
+  background: linear-gradient(#3f87da, #1f4174)
+  margin: 5px
+  align-items: center
+  justify-content: center
+  .text
+    margin-top: 3em
+    flex-basis: 100%
+    flex-direction: row
+    position: relative
+  .yellowFishTitle
+    width: 50%
+    height: auto
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: auto
+  .titleFish
+    left: 50%
+    width: 25%
+    transform: translateY(-130%) translateX(80vw)
+    @media only screen and (max-width: 650px)
+      width: 50%
+      height: auto
+  button
+    position: absolute
+    font: 3vw "Modak", serif
+    white-space: nowrap;
+    display: inline-block
+    background-color: #5aaaf5
+    color: #0a3a81
+    border: none
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    border-radius: 50%
+    height: 15vw
+    width: 15vw
+    @media only screen and (max-width: 650px)
+      font-size: 6vw
+      height: 29vw
+      width: 29vw
+  button:active
+    background-color: #9bdaff
+  button:hover
+    background-color: #9bdaff
+
+.titleSection .briefIntro
+  flex-basis: 100%
+  position: relative
+  height: 50vw
+  transform: translateX(-100%) translateY(0.25vw)
+  img
+    position: absolute
+    display: grid;
+    align-items: center;
+    opacity: 0.4
+    left: 18vw
+    top: -23vw
+    width: 60vw
+    height: 33vw
+    @media only screen and (max-width: 650px)
+      left: 3vw
+      top: -45vw
+      width: 90vw
+      height: 50vw
+  p
+    position: absolute
+    font-size: 2vw
+    font-family: "Chewy"
+    color: #e0edff
+    left: 30vw
+    top: -18vw
+    width: 40vw
+    height: 32vw
+    @media only screen and (max-width: 650px)
+      font-size: 2.6vw
+      left: 21vw
+      top: -33vw
+      width: 60vw
+      height: 32vw
+
+.fishTitleAnim 
+    animation: fish-title-move 3s ease-in-out both
+
+.fishTitleBobAnim 
+    animation: fish-title-bob 2s ease-in-out both infinite
+
+.titleBobAnim 
+    animation: title-bob 2s ease-in-out both infinite
+
+.titleMoveAnim 
+    animation: title-intro-move 2s ease-in-out both
+
+@keyframes fish-title-move
+  0%
+    transform: translateY(-100%) translateX(80vw)
+  50%
+    transform: translateY(-50%) translateX(20vw) rotate(25deg)
+  100%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+
+@keyframes fish-title-bob
+  0%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+  50%
+    transform: translateY(-128%) translateX(0vw) rotate(5deg)
+  100%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+
+@keyframes title-bob
+  0%
+    transform: translateY(0.25vw)
+  50%
+    transform: translateY(0)
+  100%
+    transform: translateY(0.25vw)
+
+@keyframes title-intro-move
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(0)
+
+
+@font-face
+  font-family: 'Modak'
+  src: url('./assets/Modak-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Chewy'
+  src: url('./assets/Chewy-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
