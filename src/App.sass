@@ -1,6 +1,4 @@
-body
-  background-color: #3f87da
-
+// ----------------------------------------------------------- Templates
 @mixin grid
   margin: 5px
   position: relative
@@ -24,13 +22,36 @@ body
   width: $width
   height: $height
 
+//Base template styling for sea-themed sections
+.seaLayout
+  @include bodyText($color: #e0edff, $size: 2vw)
+  margin: 5px
+  padding: 1rem
+  margin-top: -1rem
+  background: url("./assets/bubbles2.png"), linear-gradient( #92ceff, #4f8ed6, #2c71c0, #1d5faa)
+  @media only screen and (max-width: 650px)
+    font-size: 3vw
+    background-size: 100%
+  p
+    background-color: #041c503f
+    padding: 1rem
+    border-radius: 1rem
+    @media only screen and (max-width: 650px)
+        font-size: 3vw
+        padding: 0.5rem
+  b
+    color: #ffffda
+  img
+    animation: bob 2s ease-in-out both infinite
+// ------------------------------------------------------------- Overall Styling
+  body
+  background-color: #f5d695
 .App
   text-align: center
   font: 16px 'Arial', sans-serif
   @include flex
   flex-wrap: wrap;
-  background-color: #86bfff
-
+  background-color: #f5d695
 h1
   font-family: 'Modak'
   font-size: 4vw
@@ -40,7 +61,24 @@ h1
   background-clip: text
   color: transparent
   -webkit-text-stroke: 0.1vw black;
+  @media only screen and (max-width: 650px)
+    font-size: 6vw
+    -webkit-text-stroke: 0.1vw black;
 
+//Base template for columns
+.columns
+  @include grid
+  align-items: center
+  h1
+    grid-column: 1 / -1
+  img
+    justify-self: center
+    margin-top: 2vw
+    width: 30vw
+    height: auto
+    animation: bob 2s ease-in-out both infinite
+
+// --------------------------------------------------------------- Title Section
 .titleSection
   background: linear-gradient(#3f87da, #1f4174)
   margin: 5px
@@ -54,6 +92,8 @@ h1
     max-height: 120vw
   b
     color: #ebffbc
+
+  //Arched Text
   .text
     margin-top: 3em
     flex-basis: 100%
@@ -65,6 +105,8 @@ h1
     @media only screen and (max-width: 650px)
       width: 100%
       height: auto
+
+  //Fish
   .titleFish
     left: 50%
     width: 25%
@@ -72,6 +114,8 @@ h1
     @media only screen and (max-width: 650px)
       width: 50%
       height: auto
+
+  // Button Styling
   button
     @include directPositionSet($left: 50%, $top: 50%, $width: 15vw, $height: 15vw)
     position: absolute
@@ -92,6 +136,7 @@ h1
   button:hover
     background-color: #9bdaff
 
+  //Cloud of fish
 .titleSection .briefIntro
   flex-basis: 100%
   position: relative
@@ -112,6 +157,7 @@ h1
       font-size: 2.6vw
       @include directPositionSet($left: 21vw, $top: -33vw, $width: 60vw, $height: 32vw)
 
+//Bubbles for the title
 .bubbles
   position: relative
   width: 100%
@@ -119,20 +165,26 @@ h1
   top: -60vw
   opacity: 0.3
 
+// --------------------------------------------------------------- Me Introduction Section
 .introductionBanner
   margin: 5px
   padding-top: 1vw
+  margin-top: -1rem
   z-index: 2
   background-image: url("./assets/cloud.png"), linear-gradient(#52c3f8, #52c3f8, #52c3f8,#f5d695, #f5d695)
   background-repeat: repeat-x
   background-size: 50%
+
+  //Sea Lion positioning
   img
     width: auto
-    height: 90%
+    height: 80%
     @media only screen and (max-width: 650px)
       width: 100%
       height: auto
     animation: rock 2s ease-in-out both infinite
+
+//Brief Introduction text
 .sandIntro
   @include bodyText($color: #42341e, $size: 2vw)
   position: relative
@@ -140,10 +192,10 @@ h1
   margin: 5px
   padding: 6vw 3vw 2vw
   background-color: #f5d695
-  
   @media only screen and (max-width: 650px)
     font-size: 3.2vw
-  
+
+//Parent element of columns
 .introduction
   @include grid
   align-items: center
@@ -151,6 +203,7 @@ h1
   background: linear-gradient( #f5d695, #f5d695, #c78b31);
   b
     color: #853e69
+  //Left-hand column
   .clipboard
     @include bodyText($color: #42341e, $size: 2vw)
     @include flex
@@ -164,12 +217,13 @@ h1
       padding-top: 0
       padding-bottom: 0
       font-size: 3vw
-
+  //Right-hand column
   .paper
     @include bodyText($color: #42341e, $size: 2.5vw)
     @include flex
     margin: 1rem
     min-height: 100%;
+    //Smaller job listing details
     .card
       font-size: 1.5vw
       border-radius: 5%
@@ -181,79 +235,54 @@ h1
         padding: 0.5rem
         font-size: 2.5vw
         display: block
+      //Placement icon
       img
         display: inline-block
         border-radius: 15%
         width: 7vw;
         @media only screen and (max-width: 650px)
           width: 10vw
-      p
+      div
         display: block
         margin: 1rem
       ul
         @media only screen and (max-width: 650px)
           padding: 0
 
-.seaLayout
-  @include bodyText($color: #e0edff, $size: 2vw)
-  margin: 5px
-  padding: 1rem
-  background: url("./assets/bubbles2.png"), linear-gradient( #92ceff, #4f8ed6, #2c71c0, #1d5faa)
-  @media only screen and (max-width: 650px)
-    font-size: 3vw
-    background-size: 100%
-  p
-    background-color: #041c503f
-    padding: 1rem
-    border-radius: 1rem
-    @media only screen and (max-width: 650px)
-        font-size: 3vw
-        padding: 0.5rem
-  b
-    color: #ffffda
-  img
-    animation: title-bob 2s ease-in-out both infinite
-
-
-.columns
-  @include grid
-  align-items: center
-  img
-    justify-self: center
-    margin-top: 2vw
-    width: 30vw
-    height: auto
-    animation: title-bob 2s ease-in-out both infinite
-
+  // --------------------------------------------------------------- Why Hire Me Section
 .whyMe
   @extend .columns
   @extend .seaLayout
-  background: url("./assets/bubbles2.png"), linear-gradient(#1d5faa, #195191, #042244)
+  margin-top: -1rem
+  background: url("./assets/bubbles2.png"), linear-gradient(#1d5faa, #195191, #0d335e)
   @media only screen and (max-width: 650px)
     background-size: 100%
   p
     padding: 2rem
     @media only screen and (max-width: 650px)
       padding: 0.5rem
+  //Peeking Sea Lion
   img
     transform: rotate(-90deg)
     animation: peekingSeaLion 3s ease-in-out both infinite
     @media only screen and (max-width: 650px)
       animation: peekingSeaLionPortrait 3s ease-in-out both infinite
 
+  // --------------------------------------------------------------- What Now Section
 .whatNow
   @extend .columns
   @extend .seaLayout
   @include bodyText($color: #42341e, $size: 2vw)
-  background-image: url("./assets/cloud.png"), linear-gradient(#52c3f8, #52c3f8, #52c3f8,#f5d695, #f5d695)
-  background-repeat: repeat-x
-  background-size: 35%
-  p
+  top: -1rem
+  background-image: url("./assets/bubbles2.png"), linear-gradient(#0d335e, #16366c, #152348,#775f2d, #f5d695)
+  div
     border: solid 0.2rem #b4a397
     background: url("./assets/paper.png")
-
+  //Links to my email and Linked inlined
   .links
     display: inline
+    border: none
+    background: none
     img
       padding-left: 1rem
       padding-right: 1rem
@@ -262,98 +291,9 @@ h1
     @media only screen and (max-width: 650px)
       display: block
 
+  // --------------------------------------------------------------- footer
 footer
   @include bodyText($color: #42341e, $size: 1vw)
   padding: 0.5rem
-  
-  
 
-
-
-.fishTitleAnim 
-    animation: fish-title-move 3s ease-in-out both
-
-.fishTitleBobAnim 
-    animation: fish-title-bob 2s ease-in-out both infinite
-
-.titleBobAnim 
-    animation: title-bob 2s ease-in-out both infinite
-
-.titleMoveAnim 
-    animation: title-intro-move 2s ease-in-out both
-
-@keyframes fish-title-move
-  0%
-    transform: translateY(-100%) translateX(80vw)
-  50%
-    transform: translateY(-50%) translateX(20vw) rotate(25deg)
-  100%
-    transform: translateY(-130%) translateX(0vw) rotate(5deg)
-
-@keyframes fish-title-bob
-  0%
-    transform: translateY(-130%) translateX(0vw) rotate(5deg)
-  50%
-    transform: translateY(-128%) translateX(0vw) rotate(5deg)
-  100%
-    transform: translateY(-130%) translateX(0vw) rotate(5deg)
-
-@keyframes title-bob
-  0%
-    transform: translateY(0)
-    left: 0%
-  50%
-    transform: translateY(0.25vw)
-    left: 0%
-  100%
-    transform: translateY(0)
-    left: 0%
-
-@keyframes rock
-  0%
-    transform: rotate(0)
-    left: 0%
-  35%
-    transform: rotate(5deg)
-    left: 0%
-  75%
-    transform: rotate(-5deg)
-    left: 0%
-  100%
-    transform: rotate(0)
-    left: 0%
-
-@keyframes title-intro-move
-  0%
-    left: -100%
-  100%
-    left: 0%
-
-@keyframes peekingSeaLion
-  0%
-    transform: rotate(-90deg) translateY(50vw)
-  50%
-    transform: rotate(-90deg) translateY(15vw)
-  100%
-    transform: rotate(-90deg) translateY(50vw)
-
-@keyframes peekingSeaLionPortrait
-  0%
-    transform: rotate(-90deg) translateY(80vw)
-  50%
-    transform: rotate(-90deg) translateY(38vw)
-  100%
-    transform: rotate(-90deg) translateY(80vw)
-
-
-@font-face
-  font-family: 'Modak'
-  src: url('./assets/Modak-Regular.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'Chewy'
-  src: url('./assets/Chewy-Regular.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
+@import ./fontsAnims

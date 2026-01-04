@@ -1,0 +1,87 @@
+.fishTitleAnim 
+    animation: fish-title-move 3s ease-in-out both
+
+.fishTitleBobAnim 
+    animation: fish-bob 2s ease-in-out both infinite
+
+.titleBobAnim 
+    animation: bob 2s ease-in-out both infinite
+
+.titleMoveAnim 
+    animation: title-intro-move 2s ease-in-out both
+
+@keyframes fish-title-move
+  0%
+    transform: translateY(-100%) translateX(80vw)
+  50%
+    transform: translateY(-50%) translateX(20vw) rotate(25deg)
+  100%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+
+@keyframes fish-bob
+  0%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+  50%
+    transform: translateY(-128%) translateX(0vw) rotate(5deg)
+  100%
+    transform: translateY(-130%) translateX(0vw) rotate(5deg)
+
+@keyframes bob
+  0%
+    transform: translateY(0)
+    left: 0%
+  50%
+    transform: translateY(0.25vw)
+    left: 0%
+  100%
+    transform: translateY(0)
+    left: 0%
+
+@keyframes rock
+  0%
+    transform: rotate(0)
+    left: 0%
+  35%
+    transform: rotate(5deg)
+    left: 0%
+  75%
+    transform: rotate(-5deg)
+    left: 0%
+  100%
+    transform: rotate(0)
+    left: 0%
+
+@keyframes title-intro-move
+  0%
+    left: -100%
+  100%
+    left: 0%
+
+@keyframes peekingSeaLion
+  0%
+    transform: rotate(-90deg) translateY(50vw)
+  50%
+    transform: rotate(-90deg) translateY(15vw)
+  100%
+    transform: rotate(-90deg) translateY(50vw)
+
+@keyframes peekingSeaLionPortrait
+  0%
+    transform: rotate(-90deg) translateY(80vw)
+  50%
+    transform: rotate(-90deg) translateY(38vw)
+  100%
+    transform: rotate(-90deg) translateY(80vw)
+
+
+@font-face
+  font-family: 'Modak'
+  src: url('./assets/Modak-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Chewy'
+  src: url('./assets/Chewy-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
