@@ -1,26 +1,59 @@
+body
+  background-color: #3f87da
+
+@mixin grid
+  margin: 5px
+  position: relative
+  @media only screen and (min-width:650px)
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+@mixin bodyText($color, $size)
+  font-size: $size
+  font-family: 'chewy'
+  color: $color
+
+@mixin flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+@mixin directPositionSet($left, $top, $width, $height)
+  left: $left
+  top: $top
+  width: $width
+  height: $height
+
 .App
   text-align: center
   font: 16px 'Arial', sans-serif
-  display: flex
-  flex-direction: column
+  @include flex
   flex-wrap: wrap;
+  background-color: #86bfff
 
-.personalKeywords
-  color: purple
-.techKeywords
-  color: green
-.professionalKeywords
-  color: blue
-.softKeywords
-  color: pink
-.yellowFishKeywords
-  color: yellow
+h1
+  font-family: 'Modak'
+  font-size: 4vw
+  letter-spacing: 0.1vw;
+  background: linear-gradient( #f3da86ff, #ffae00);
+  -webkit-background-clip: text
+  background-clip: text
+  color: transparent
+  -webkit-text-stroke: 0.1vw black;
 
 .titleSection
   background: linear-gradient(#3f87da, #1f4174)
   margin: 5px
   align-items: center
   justify-content: center
+  z-index: 1
+  max-height: 64vw
+  @media only screen and (max-width: 650px)
+    max-height: 113vw
+  @media only screen and (max-width: 300px)
+    max-height: 120vw
+  b
+    color: #ebffbc
   .text
     margin-top: 3em
     flex-basis: 100%
@@ -40,6 +73,7 @@
       width: 50%
       height: auto
   button
+    @include directPositionSet($left: 50%, $top: 50%, $width: 15vw, $height: 15vw)
     position: absolute
     font: 3vw "Modak", serif
     white-space: nowrap;
@@ -47,12 +81,8 @@
     background-color: #5aaaf5
     color: #0a3a81
     border: none
-    top: 50%
-    left: 50%
     transform: translate(-50%, -50%)
     border-radius: 50%
-    height: 15vw
-    width: 15vw
     @media only screen and (max-width: 650px)
       font-size: 6vw
       height: 29vw
@@ -65,37 +95,180 @@
 .titleSection .briefIntro
   flex-basis: 100%
   position: relative
-  height: 50vw
-  transform: translateX(-100%) translateY(0.25vw)
+  left: -100%
   img
     position: absolute
     display: grid;
     align-items: center;
     opacity: 0.4
-    left: 18vw
-    top: -23vw
-    width: 60vw
-    height: 33vw
+    @include directPositionSet($left: 18vw, $top: -23vw, $width: 60vw, $height: 33vw)
     @media only screen and (max-width: 650px)
-      left: 3vw
-      top: -45vw
-      width: 90vw
-      height: 50vw
+      @include directPositionSet($left: 3vw, $top: -45vw, $width: 90vw, $height: 50vw)
   p
+    @include bodyText($color: #e0edff, $size: 2vw)
+    @include directPositionSet($left: 30vw, $top: -18vw, $width: 40vw, $height: 32vw)
     position: absolute
-    font-size: 2vw
-    font-family: "Chewy"
-    color: #e0edff
-    left: 30vw
-    top: -18vw
-    width: 40vw
-    height: 32vw
     @media only screen and (max-width: 650px)
       font-size: 2.6vw
-      left: 21vw
-      top: -33vw
-      width: 60vw
-      height: 32vw
+      @include directPositionSet($left: 21vw, $top: -33vw, $width: 60vw, $height: 32vw)
+
+.bubbles
+  position: relative
+  width: 100%
+  pointer-events: none
+  top: -60vw
+  opacity: 0.3
+
+.introductionBanner
+  margin: 5px
+  padding-top: 1vw
+  z-index: 2
+  background-image: url("./assets/cloud.png"), linear-gradient(#52c3f8, #52c3f8, #52c3f8,#f5d695, #f5d695)
+  background-repeat: repeat-x
+  background-size: 50%
+  img
+    width: auto
+    height: 90%
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: auto
+    animation: rock 2s ease-in-out both infinite
+.sandIntro
+  @include bodyText($color: #42341e, $size: 2vw)
+  position: relative
+  top: -6vw
+  margin: 5px
+  padding: 6vw 3vw 2vw
+  background-color: #f5d695
+  
+  @media only screen and (max-width: 650px)
+    font-size: 3.2vw
+  
+.introduction
+  @include grid
+  align-items: center
+  margin-top: -8.8vw
+  background: linear-gradient( #f5d695, #f5d695, #c78b31);
+  b
+    color: #853e69
+  .clipboard
+    @include bodyText($color: #42341e, $size: 2vw)
+    @include flex
+    margin: 1rem
+    background-image: url("./assets/paper.png")
+    padding-left: 1rem
+    padding-right: 1rem
+    border: solid 2vw #814e31
+    border-radius: 2vw
+    @media only screen and (max-width: 650px)
+      padding-top: 0
+      padding-bottom: 0
+      font-size: 3vw
+
+  .paper
+    @include bodyText($color: #42341e, $size: 2.5vw)
+    @include flex
+    margin: 1rem
+    min-height: 100%;
+    .card
+      font-size: 1.5vw
+      border-radius: 5%
+      padding: 1rem
+      margin: 1rem
+      background-image: url("./assets/paper.png")
+      display: block
+      @media only screen and (max-width: 650px)
+        padding: 0.5rem
+        font-size: 2.5vw
+        display: block
+      img
+        display: inline-block
+        border-radius: 15%
+        width: 7vw;
+        @media only screen and (max-width: 650px)
+          width: 10vw
+      p
+        display: block
+        margin: 1rem
+      ul
+        @media only screen and (max-width: 650px)
+          padding: 0
+
+.seaLayout
+  @include bodyText($color: #e0edff, $size: 2vw)
+  margin: 5px
+  padding: 1rem
+  background: url("./assets/bubbles2.png"), linear-gradient( #92ceff, #4f8ed6, #2c71c0, #1d5faa)
+  @media only screen and (max-width: 650px)
+    font-size: 3vw
+    background-size: 100%
+  p
+    background-color: #041c503f
+    padding: 1rem
+    border-radius: 1rem
+    @media only screen and (max-width: 650px)
+        font-size: 3vw
+        padding: 0.5rem
+  b
+    color: #ffffda
+  img
+    animation: title-bob 2s ease-in-out both infinite
+
+
+.columns
+  @include grid
+  align-items: center
+  img
+    justify-self: center
+    margin-top: 2vw
+    width: 30vw
+    height: auto
+    animation: title-bob 2s ease-in-out both infinite
+
+.whyMe
+  @extend .columns
+  @extend .seaLayout
+  background: url("./assets/bubbles2.png"), linear-gradient(#1d5faa, #195191, #042244)
+  @media only screen and (max-width: 650px)
+    background-size: 100%
+  p
+    padding: 2rem
+    @media only screen and (max-width: 650px)
+      padding: 0.5rem
+  img
+    transform: rotate(-90deg)
+    animation: peekingSeaLion 3s ease-in-out both infinite
+    @media only screen and (max-width: 650px)
+      animation: peekingSeaLionPortrait 3s ease-in-out both infinite
+
+.whatNow
+  @extend .columns
+  @extend .seaLayout
+  @include bodyText($color: #42341e, $size: 2vw)
+  background-image: url("./assets/cloud.png"), linear-gradient(#52c3f8, #52c3f8, #52c3f8,#f5d695, #f5d695)
+  background-repeat: repeat-x
+  background-size: 35%
+  p
+    border: solid 0.2rem #b4a397
+    background: url("./assets/paper.png")
+
+  .links
+    display: inline
+    img
+      padding-left: 1rem
+      padding-right: 1rem
+      width: 20%
+      animation: none
+    @media only screen and (max-width: 650px)
+      display: block
+
+footer
+  @include bodyText($color: #42341e, $size: 1vw)
+  padding: 0.5rem
+  
+  
+
+
 
 .fishTitleAnim 
     animation: fish-title-move 3s ease-in-out both
@@ -127,17 +300,50 @@
 
 @keyframes title-bob
   0%
-    transform: translateY(0.25vw)
-  50%
     transform: translateY(0)
-  100%
+    left: 0%
+  50%
     transform: translateY(0.25vw)
+    left: 0%
+  100%
+    transform: translateY(0)
+    left: 0%
+
+@keyframes rock
+  0%
+    transform: rotate(0)
+    left: 0%
+  35%
+    transform: rotate(5deg)
+    left: 0%
+  75%
+    transform: rotate(-5deg)
+    left: 0%
+  100%
+    transform: rotate(0)
+    left: 0%
 
 @keyframes title-intro-move
   0%
-    transform: translateX(-100%)
+    left: -100%
   100%
-    transform: translateX(0)
+    left: 0%
+
+@keyframes peekingSeaLion
+  0%
+    transform: rotate(-90deg) translateY(50vw)
+  50%
+    transform: rotate(-90deg) translateY(15vw)
+  100%
+    transform: rotate(-90deg) translateY(50vw)
+
+@keyframes peekingSeaLionPortrait
+  0%
+    transform: rotate(-90deg) translateY(80vw)
+  50%
+    transform: rotate(-90deg) translateY(38vw)
+  100%
+    transform: rotate(-90deg) translateY(80vw)
 
 
 @font-face
