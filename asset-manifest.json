@@ -1,30 +1,25 @@
 {
   "files": {
-    "main.css": "/yellowfish/static/css/main.78e4f55c.css",
-    "main.js": "/yellowfish/static/js/main.8f814d13.js",
+    "main.css": "/yellowfish/static/css/main.e6c13ad2.css",
+    "main.js": "/yellowfish/static/js/main.a865820a.js",
     "static/js/453.7bb6518f.chunk.js": "/yellowfish/static/js/453.7bb6518f.chunk.js",
     "static/media/fishGroup.png": "/yellowfish/static/media/fishGroup.4597ea187407e774905e.png",
-    "static/media/Modak-Regular.ttf": "/yellowfish/static/media/Modak-Regular.5e86e34ad9d1e27c58a2.ttf",
     "static/media/yellowFishSeaLion.png": "/yellowfish/static/media/yellowFishSeaLion.b3f2f05311da06992f65.png",
     "static/media/endSeaLion.png": "/yellowfish/static/media/endSeaLion.b8dcf5b877d0641a4e6d.png",
     "static/media/popupSeaLion.png": "/yellowfish/static/media/popupSeaLion.260ec8fc19bc27aefddd.png",
     "static/media/yellowFish.png": "/yellowfish/static/media/yellowFish.62553a556d6156da0220.png",
     "static/media/gradSeaLion.png": "/yellowfish/static/media/gradSeaLion.43fa3037b2a29af3fe81.png",
     "static/media/bubbles.png": "/yellowfish/static/media/bubbles.4f13c761cf974e08621e.png",
-    "static/media/bubbles2.png": "/yellowfish/static/media/bubbles2.3f97b94597c63c6a50b9.png",
     "static/media/email.png": "/yellowfish/static/media/email.b17255e05a10768abf62.png",
-    "static/media/paper.png": "/yellowfish/static/media/paper.d46e7039fd6b032924e8.png",
     "static/media/linkedIn.png": "/yellowfish/static/media/linkedIn.09bb74970062ab95fc20.png",
-    "static/media/cloud.png": "/yellowfish/static/media/cloud.0358471bf1a7dc0261dd.png",
-    "static/media/Chewy-Regular.ttf": "/yellowfish/static/media/Chewy-Regular.e94e4ae6b454c4a3e69c.ttf",
     "static/media/uobLogo.jpg": "/yellowfish/static/media/uobLogo.8d1af69361b988958d4f.jpg",
     "index.html": "/yellowfish/index.html",
-    "main.78e4f55c.css.map": "/yellowfish/static/css/main.78e4f55c.css.map",
-    "main.8f814d13.js.map": "/yellowfish/static/js/main.8f814d13.js.map",
+    "main.e6c13ad2.css.map": "/yellowfish/static/css/main.e6c13ad2.css.map",
+    "main.a865820a.js.map": "/yellowfish/static/js/main.a865820a.js.map",
     "453.7bb6518f.chunk.js.map": "/yellowfish/static/js/453.7bb6518f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78e4f55c.css",
-    "static/js/main.8f814d13.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.a865820a.js"
   ]
 }
