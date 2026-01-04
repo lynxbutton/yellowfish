@@ -12,8 +12,18 @@ import linkedIn from "./assets/linkedIn.png"
 import email from "./assets/email.png"
 import bubbles from './assets/bubbles.png'
 //Libaries and SASS
-import './App.sass';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter } from "react-router-dom";
 import { useEffect, useRef } from 'react';
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <HashRouter>
+    <App />
+  </HashRouter>
+);
 
 // ------------------------------------------------------------------------------ Helper Funct
 function ArchText(className, text, angle, radius){
